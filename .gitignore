@@ -1,0 +1,45 @@
+# Ignore the node_modules directory
+node_modules/
+
+# Ignore Logs
+logs
+*.log
+
+# Ignore the build directory
+/dist
+
+# The file containing environment variables
+.env
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.sw*
+
+
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+
+# Игнорировать все в корне, кроме каталога "wp-content".
+/ *
+!.gitignore
+!wp-content /
+
+# Игнорировать все в каталоге "wp-content", кроме "plugins"
+# и каталоги "themes".
+wp-content / *
+!wp-content / plugins /
+!wp-content / themes /
+
+# Игнорировать все в каталоге "plugins", кроме плагинов, которые вы
+# укажите (см. закомментированные примеры, чтобы узнать, как это сделать.)
+# wp-content / plugins / *
+#! wp-content / plugins / my-directory-plugin /
+
+# Игнорировать все в каталоге "themes", кроме тем, которые вы
+# укажите (см. закомментированный пример, чтобы узнать, как это сделать.)
+# wp-content / themes / *
+#! wp-content / themes / моя-тема /
