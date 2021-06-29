@@ -1,5 +1,17 @@
 'use strict'
 
+
+// const circle = document.querySelector('#button-arrow-circle');
+// const arrow = document.querySelector('#circle-arrow');
+// const button = document.querySelector('.button_arrow');
+//
+// button.addEventListener('mousemove', function (e) {
+//     let x = e.clientX / window.innerWidth;
+//     let y = e.clientY / window.innerHeight;
+//     circle.style.transform = 'translate(' + x * 50 + 'px,' + y * 50 + 'px)';
+// });
+
+
 const changeChecked = () => {
     const sw5 = document.querySelector('#switch5');
     const sw1 = document.querySelector('#switch1');

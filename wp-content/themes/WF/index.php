@@ -60,12 +60,12 @@ get_header();
                                 </p>
                                 <div class="button_arrow">
                                     <a class="button_arrow__text" href="#form_anhor">Записаться</a>
-                                    <a id="button-arrow-circle" class="button_arrow__circle" href="#form_anhor">
+                                        <a id="button-arrow-circle" class="button_arrow__circle" href="#form_anhor">
                                      <span id="circle-arrow" class="circle-arrow">
                                          <img src="<?php echo bloginfo('template_url'); ?>/assets/img/arrow.png"
                                               alt="arrow">
                                      </span>
-                                    </a>
+                                        </a>
                                 </div>
                             </div>
                             <div class="img_computer">
@@ -470,31 +470,32 @@ get_header();
                         <div id="slides">
                             <div id="overflow">
                                 <div class="image">
-                                    <article><img src="<?php echo bloginfo('template_url'); ?>/assets/img/1.png"
-                                                  alt="img">
-                                        <span class="blog_data">12 января 2021</span>
-                                        <span class="blog_title">Этапы разработки сайта: нюансы</span>
-                                    </article>
-                                    <article><img src="<?php echo bloginfo('template_url'); ?>/assets/img/2.png"
-                                                  alt="img">
-                                        <span class="blog_data">12 января 2021</span>
-                                        <span class="blog_title">Frontend, Backend или Fullstack: что выбрать</span>
-                                    </article>
-                                    <article><img src="<?php echo bloginfo('template_url'); ?>/assets/img/3.png"
-                                                  alt="img">
-                                        <span class="blog_data">12 января 2021</span>
-                                        <span class="blog_title">Название статьи</span>
-                                    </article>
-                                    <article><img src="<?php echo bloginfo('template_url'); ?>/assets/img/4.png"
-                                                  alt="img">
-                                        <span class="blog_data">12 января 2021</span>
-                                        <span class="blog_title">Название статьи</span>
-                                    </article>
-                                    <article><img src="<?php echo bloginfo('template_url'); ?>/assets/img/5.png"
-                                                  alt="img">
-                                        <span class="blog_data">12 января 2021</span>
-                                        <span class="blog_title">Название статьи</span>
-                                    </article>
+
+                                    <?php
+                                    // параметры по умолчанию
+                                    $posts = get_posts(array(
+                                        'numberposts' => -1,
+                                        'category_name' => 'slider',
+                                        'orderby' => 'date',
+                                        'order' => 'ASC',
+                                        'post_type' => 'post',
+                                        'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                                    ));
+
+                                    foreach ($posts as $post) {
+                                        setup_postdata($post);
+                                        ?>
+                                        <article>
+                                            <a href="<?php the_field('slider_link') ?>">
+                                                <img src="<?php the_field('slider_img') ?>">
+                                                <span class="blog_data"><?php the_field('data') ?></span>
+                                                <span class="blog_title"><?php the_field('slider_title') ?></span>
+                                            </a>
+                                        </article>
+                                        <?php
+                                    }
+                                    wp_reset_postdata();
+                                    ?>
                                 </div>
                             </div>
                         </div>
